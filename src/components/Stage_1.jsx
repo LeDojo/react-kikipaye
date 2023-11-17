@@ -55,10 +55,14 @@ const Stage1 = () => {
               {context.state.players.map((item,idx)=>(
                 <li key={idx} className="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
                   {item}
-                  <span className="badge badge-danger">x</span>
+                  <span className="badge badge-danger" onClick={() => context.removePlayer(idx)}>x</span>
                 </li>
               ))}
             </ul>
+            <Button className="action_button"
+            onClick={() => context.next()}
+            > NEXT
+            </Button>
           </div>
           </>
           :null
